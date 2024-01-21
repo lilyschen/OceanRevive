@@ -27,8 +27,8 @@ let capturedLocations = [
 
   {
     location: { id: 2, name: 'Spanish Banks', lat: 49.2765, lng: -123.2133 },
-    image: "",
-    garbageType: ["Glass"]
+    image: "needlebeach.jpeg",
+    garbageType: ["Needle"]
   }];
 
 // Set up multer for handling file uploads

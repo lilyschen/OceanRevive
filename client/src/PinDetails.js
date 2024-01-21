@@ -31,7 +31,7 @@ const PinDetails = () => {
 
 
     return (
-        <div>
+        <div className="pin-container">
             {loading && <p>Loading...</p>}
 
             {location && location.location && (
@@ -48,7 +48,7 @@ const PinDetails = () => {
 
             
             {!loading && !location && <p>Location not found.</p>}
-            <Link to="/profile" className='profile'>Claim</Link>
+            <Link to="/profile" className='toProfile'>Claim</Link>
             {/* <button className='profile' onClick={profile}>Claim</button> */}
         </div>
     );
