@@ -1,22 +1,21 @@
 // src/App.js
 import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CameraUpload from './CameraUpload';
 import MapScreen from './MapScreen';
+import PinDetails from './PinDetails';
+import Navbar from './Navbar';
 
 function App() {
-  const [currentScreen, setCurrentScreen] = useState('camera');
-
   return (
-    <div className="App">
-      <nav>
-        <ul>
-          <li onClick={() => setCurrentScreen('camera')}>Camera Upload</li>
-          <li onClick={() => setCurrentScreen('map')}>Map</li>
-        </ul>
-      </nav>
-      {currentScreen === 'camera' && <CameraUpload setScreen={setCurrentScreen} />}
-      {currentScreen === 'map' && <MapScreen setScreen={setCurrentScreen} />}
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<MapScreen />} />
+        <Route path="/upload" element={<CameraUpload />} />
+        <Route path="/pin-details/:pinId" element={<PinDetails />} />
+      </Routes>
+    </Router>
   );
 }
 

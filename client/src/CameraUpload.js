@@ -1,5 +1,6 @@
 // src/CameraUpload.js
 import React, { useState, useCallback, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import Webcam from 'react-webcam';
 
 const CameraUpload = () => {
@@ -29,6 +30,8 @@ const CameraUpload = () => {
     setImage(imageSrc);
   }, []);
 
+  let navigate = useNavigate();
+
   const handleUpload = () => {
     if (image) {
       const formData = new FormData();
@@ -45,6 +48,7 @@ const CameraUpload = () => {
         .then((result) => {
           console.log(result);
           // Handle success or display a message to the user
+          navigate("/");
         })
         .catch((error) => {
           console.error('Error uploading image:', error);

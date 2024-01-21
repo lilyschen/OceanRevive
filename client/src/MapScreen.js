@@ -1,5 +1,6 @@
 // src/MapScreen.js
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
 
 const MapScreen = ({ setScreen }) => {
@@ -35,6 +36,12 @@ const MapScreen = ({ setScreen }) => {
     height: '400px',
   };
 
+  let navigate = useNavigate();
+  const routeChange = (detailId) => {
+    let path = `/pin-details/${detailId}`;
+    navigate(path);
+  }
+
   const center = userLocation || { lat: 37.7749, lng: -122.4194 };
 
   return (
@@ -47,7 +54,9 @@ const MapScreen = ({ setScreen }) => {
               key={location.id}
               position={{ lat: location.lat, lng: location.lng }}
               title={location.name}
-            />
+              onClick={() => routeChange(location.id)}
+            >
+            </MarkerF>
           ))}
         </GoogleMap>
       </LoadScript>
