@@ -1,0 +1,42 @@
+.container {
+    height: 100vh; 
+    background-color: #ECF8FF;
+    position: relative;
+    overflow: hidden
+}
+
+h1 {
+    padding: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.container::before {
+    background-color: #C0D9FF; 
+    width: 350px;
+    height: 350px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    bottom: 60%;
+    right: 10%;
+    transform: translateX(-50%);
+    
+}
+
+.container::after {
+    border-radius: 325px;
+    background-color: #C0FFF0;
+    width: 345px;
+    height: 330px;
+    flex-shrink: 0;
+    bottom: 70%;
+    left: 20%;
+}
