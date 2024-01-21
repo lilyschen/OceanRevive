@@ -1,10 +1,28 @@
 // src/CameraUpload.js
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import Webcam from 'react-webcam';
 
 const CameraUpload = () => {
   const [image, setImage] = useState(null);
+  const [userLocation, setUserLocation] = useState(null);
   const webcamRef = React.useRef(null);
+
+  useEffect(() => {
+    // Get user's current location
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords;
+          setUserLocation({ lat: latitude, lng: longitude });
+        },
+        (error) => {
+          console.error('Error getting user location:', error);
+        }
+      );
+    } else {
+      console.error('Geolocation is not supported by this browser.');
+    }
+  }, []);
 
   const handleCapture = useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();
@@ -16,6 +34,7 @@ const CameraUpload = () => {
       const formData = new FormData();
       const blob = dataURLtoBlob(image);
       formData.append('image', blob, 'captured-image.png');
+      formData.append('location', JSON.stringify(userLocation));
 
       // TODO: Replace with appropriate constant
       fetch('http://localhost:3001/upload', {

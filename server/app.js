@@ -3,6 +3,7 @@ const express = require('express');
 const multer = require('multer');
 const cors = require('cors')
 const path = require('path');
+const bodyParser = require('body-parser');
 
 const app = express();
 const port = 3001;
@@ -12,14 +13,17 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 // TODO: Configure CORS appropriately to only allowlist the client.
 app.use(cors())
 
+app.use(bodyParser.urlencoded({ extended: true }));
 
 let capturedLocations = [
-  { location: {id: 1, name: 'Wreck Beach', lat: 49.2622, lng: -123.2615},
+  {
+    location: { id: 1, name: 'Wreck Beach', lat: 49.2622, lng: -123.2615 },
     image: "",
     garbageType: ["Sharp"]
   },
 
-  { location: {id: 1, name: 'Spanish Banks', lat: 49.2765, lng: -123.2133},
+  {
+    location: { id: 1, name: 'Spanish Banks', lat: 49.2765, lng: -123.2133 },
     image: "",
     garbageType: ["Glass"]
   }];
@@ -37,12 +41,18 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 app.get('/locations', (req, res) => {
-  
+
   res.json(capturedLocations.map((item) => item.location));
 });
 
 app.post('/upload', upload.single('image'), (req, res) => {
   if (req.file) {
+    const parsedLocation = JSON.parse(req.body.location)
+    capturedLocations.push({
+      image: req.file.filename,
+      location: { lat: parseFloat(parsedLocation.lat), lng: parseFloat(parsedLocation.lng) },
+    });
+
     res.send('File uploaded!');
   } else {
     res.status(400).send('No file uploaded.');
