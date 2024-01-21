@@ -1,7 +1,7 @@
 // src/MapScreen.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import { GoogleMap, LoadScript, MarkerF } from '@react-google-maps/api';
+import { GoogleMap, MarkerF } from '@react-google-maps/api';
 
 const MapScreen = ({ setScreen }) => {
   const [userLocation, setUserLocation] = useState(null);
@@ -42,7 +42,7 @@ const MapScreen = ({ setScreen }) => {
     navigate(path);
   }
 
-  const center = userLocation || { lat: 37.7749, lng: -122.4194 };
+  const center = userLocation || { lat: 49.2626161, lng: -123.2453741 };
 
   return (
     <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={12}>
