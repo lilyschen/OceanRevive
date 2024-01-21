@@ -7,6 +7,7 @@ import PinDetails from './PinDetails';
 import Navbar from './Navbar';
 import NavbarTop from './NavbarTop';
 import { LoadScript } from '@react-google-maps/api';
+import Home from './Home';
 
 function App() {
   return (
@@ -15,8 +16,10 @@ function App() {
         <NavbarTop />
         <Navbar />
         <Routes>
-          <Route path="/" element={<MapScreen />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/discover" element={<MapScreen />} />
           <Route path="/upload" element={<CameraUpload />} />
+          <Route path="/profile" element={<MapScreen />} />
           <Route path="/pin-details/:pinId" element={<PinDetails />} />
         </Routes>
       </Router>

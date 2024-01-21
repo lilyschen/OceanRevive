@@ -4,8 +4,8 @@ import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css'; // Import the CSS file
 import { ReactComponent as HomeLogoActive } from './UI icon/home-active.svg';
 import { ReactComponent as HomeLogo } from './UI icon/home.svg';
-import { ReactComponent as DiscoveryLogoActive } from './UI icon/discovery-active.svg';
-import { ReactComponent as DiscoveryLogo } from './UI icon/discovery.svg';
+import { ReactComponent as DiscoverLogoActive } from './UI icon/discover-active.svg';
+import { ReactComponent as DiscoverLogo } from './UI icon/discover.svg';
 import { ReactComponent as ProfileLogoActive } from './UI icon/profile-active.svg';
 import { ReactComponent as ProfileLogo } from './UI icon/profile.svg';
 import { ReactComponent as CameraLogoActive } from './UI icon/camera-active.svg';
@@ -41,8 +41,8 @@ const Navbar = () => {
         // Determine the active icon based on the current pathname
         if (pathname === '/') {
             setActiveIcon('home');
-        } else if (pathname === '/discovery') {
-            setActiveIcon('discovery');
+        } else if (pathname === '/discover') {
+            setActiveIcon('discover');
         } else if (pathname === '/profile') {
             setActiveIcon('profile');
         } else if (pathname === '/upload') {
@@ -59,8 +59,8 @@ const Navbar = () => {
             <br/><label class='home'>Home</label></Link>
           </li>
           <li>
-            <Link to="/discovery">{activeIcon === 'discovery' ? <DiscoveryLogoActive /> : <DiscoveryLogo />}
-            <br/>Discovery</Link>
+            <Link to="/discover">{activeIcon === 'discover' ? <DiscoverLogoActive /> : <DiscoverLogo />}
+            <br/>Discover</Link>
           </li>
           <li>
             <Link to="/upload">{activeIcon === 'upload' ? <CameraLogoActive /> : <CameraLogo />}
