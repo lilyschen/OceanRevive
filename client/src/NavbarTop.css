@@ -1,0 +1,39 @@
+/* Navbar.css */
+.navbarTop {
+    background-color: #333;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .nav-linksTop {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .nav-linksTop li {
+    margin-right: 20px;
+  }
+  
+  .nav-linksTop a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 16px;
+  }
+  
+  /* Media query for mobile styles */
+  @media only screen and (max-width: 768px) {
+    .nav-linksTop {
+      flex-direction: row;
+    }
+  
+    .nav-linksTop li {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+  
