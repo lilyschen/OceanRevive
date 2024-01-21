@@ -3,6 +3,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import Webcam from 'react-webcam';
 import './CameraUpload.css'; // Import the CSS file
+import { ReactComponent as CaptureLogo } from './UI icon/capture.svg';
 
 
 const CameraUpload = () => {
@@ -83,7 +84,7 @@ const CameraUpload = () => {
         style = {{width: "100%", height: "60%", position: "absolute", left: "50%", marginLeft: "-50%", objectFit: "cover", objectPosition: "center"}}
       />
       
-      {!image && <button className='button' onClick={handleCapture}>Capture</button>}
+      {!image && <button className='button' onClick={handleCapture}><CaptureLogo onClick={handleCapture}/></button>}
       {image && <button className='retake' onClick={retake}>Retake</button>}
       {image && <img src={image} alt="Preview" style = {{width: "100%", height: "60%", position: "absolute", left: "50%", marginLeft: "-50%", objectFit: "cover", objectPosition: "center"}}/>}
       {image && <button className='upload' onClick={handleUpload}>Upload</button>}
