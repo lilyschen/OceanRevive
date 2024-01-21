@@ -11,7 +11,7 @@ const AIconfirm = () => {
             
         </div>
         <div>
-            <Link to="/discorer" className='AIdiscover'>Confirm</Link>
+            <Link to="/discover" className='AIdiscover'>Confirm</Link>
             <Link to="/ManualInput" className='ManualInput'>Other</Link>
         </div>
         </div>
