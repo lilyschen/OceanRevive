@@ -13,7 +13,7 @@ import Home from './Home';
 
 function App() {
   return (
-    <LoadScript googleMapsApiKey="AIzaSyDq_llB4_W81OycWElDWisRWwX7rSth-M4">
+    <LoadScript googleMapsApiKey="AIzaSyBoVsCkr0q-fzvg_xkLMO7BVM6bSOi1fzI">
       <Router>
         <NavbarTop />
         <Navbar />

@@ -3,6 +3,7 @@
     position: absolute;
     top: 65%;
     left: 42%;
+    
 
 
     display: inline-block;
@@ -20,6 +21,7 @@
 .pinDetailsImg{
   position: absolute;
   top: 13%;
+  width:100%;
 
 }
 
