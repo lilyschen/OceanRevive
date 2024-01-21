@@ -17,6 +17,7 @@ const CameraUpload = () => {
       const blob = dataURLtoBlob(image);
       formData.append('image', blob, 'captured-image.png');
 
+      // TODO: Replace with appropriate constant
       fetch('http://localhost:3001/upload', {
         method: 'POST',
         body: formData,
