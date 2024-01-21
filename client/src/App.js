@@ -7,6 +7,8 @@ import PinDetails from './PinDetails';
 import Navbar from './Navbar';
 import NavbarTop from './NavbarTop';
 import Profile from './Profile';
+import AIconfirm from './AIconfirm';
+import ManualInput from './ManualInput';
 import { LoadScript } from '@react-google-maps/api';
 import Home from './Home';
 
@@ -22,6 +24,8 @@ function App() {
           <Route path="/discover" element={<MapScreen />} />
           <Route path="/upload" element={<CameraUpload />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/AIconfirm" element={<AIconfirm />} />
+          <Route path="/ManualInput" element={<ManualInput />} />
           <Route path="/pin-details/:pinId" element={<PinDetails />} />
         </Routes>
       </Router>

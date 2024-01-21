@@ -50,7 +50,7 @@ const CameraUpload = () => {
         .then((result) => {
           console.log(result);
           // Handle success or display a message to the user
-          navigate("/discover");
+          navigate("/AIconfirm");
         })
         .catch((error) => {
           console.error('Error uploading image:', error);
