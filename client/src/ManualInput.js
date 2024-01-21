@@ -7,7 +7,7 @@ const ManualInput = () => {
     return (
         <div>
         <div className="ManualConfirm">
-            <img src={require('./UI icon/Scroll_group.png')} className="ManualSample" />
+            <img src={require('./Home icon/UploadConfirm.jpeg')} className="ManualSample" />
             
         </div>
         <div>
