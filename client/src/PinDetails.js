@@ -1,6 +1,8 @@
 // src/components/PinDetails.js
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './PinDetails.css'; // Import the CSS file
 
 const PinDetails = () => {
     const [location, setLocation] = useState(null);
@@ -27,16 +29,31 @@ const PinDetails = () => {
         fetchLocationDetails();
     }, [pinId]);
 
+    const profile = () => {
+
+    }
+
+
     return (
         <div>
             {loading && <p>Loading...</p>}
+
             {location && location.location && (
-                <h2>{location.location.name}</h2>
+                <h2 className="locationName">{location.location.name}</h2>
             )}
+
+
             {location && location.image && (
-                <img src={"/" + location.image} />
+                
+                <img className="pinDetailsImg" src={"/" + location.image} />
+                
+                
             )}
+
+            
             {!loading && !location && <p>Location not found.</p>}
+            <Link to="/profile" className='profile'>Claim</Link>
+            {/* <button className='profile' onClick={profile}>Claim</button> */}
         </div>
     );
 };
