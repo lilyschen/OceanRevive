@@ -1,0 +1,35 @@
+/* F5F5F5 = background colour */
+/* Profile.css */
+
+.TS{
+    /* display: flex; */
+    position: absolute;
+    top: 4%;
+    /* justify-content: center;
+    align-items: center;
+    height: 100vh; */
+}
+
+.responsive-image {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.ManualSubmit {
+    margin: 0 ;
+    position: absolute;
+    top: 65%;
+    left: 42%;
+
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; 
+}

@@ -29,10 +29,6 @@ const PinDetails = () => {
         fetchLocationDetails();
     }, [pinId]);
 
-    const profile = () => {
-
-    }
-
 
     return (
         <div>
