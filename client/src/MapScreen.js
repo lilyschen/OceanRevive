@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { GoogleMap, MarkerF } from '@react-google-maps/api';
+import './MapScreen.css'; // Import the CSS file
 
 const MapScreen = ({ setScreen }) => {
   const [userLocation, setUserLocation] = useState(null);
@@ -33,7 +34,12 @@ const MapScreen = ({ setScreen }) => {
 
   const mapContainerStyle = {
     width: '100%',
-    height: '400px',
+    height: '100vh',
+    
+  };
+  const mapUI = {
+    disableDefaultUI: true,
+    keyboardShortcuts: false
   };
 
   let navigate = useNavigate();
@@ -45,7 +51,8 @@ const MapScreen = ({ setScreen }) => {
   const center = userLocation || { lat: 49.2626161, lng: -123.2453741 };
 
   return (
-    <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={12}>
+    <GoogleMap options={mapUI} mapContainerStyle={mapContainerStyle} center={center} zoom={13} >
+      
       {locations.map((location) => (
         <MarkerF
           key={location.id}
