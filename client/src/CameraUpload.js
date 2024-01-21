@@ -2,6 +2,8 @@
 import React, { useState, useCallback, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import Webcam from 'react-webcam';
+import './CameraUpload.css'; // Import the CSS file
+
 
 const CameraUpload = () => {
   const [image, setImage] = useState(null);
@@ -48,7 +50,7 @@ const CameraUpload = () => {
         .then((result) => {
           console.log(result);
           // Handle success or display a message to the user
-          navigate("/");
+          navigate("/discover");
         })
         .catch((error) => {
           console.error('Error uploading image:', error);
@@ -56,6 +58,9 @@ const CameraUpload = () => {
         });
     }
   };
+  const retake = () => {
+    setImage(null)
+  }
 
   const dataURLtoBlob = (dataURL) => {
     const arr = dataURL.split(',');
@@ -75,14 +80,16 @@ const CameraUpload = () => {
         audio={false}
         ref={webcamRef}
         screenshotFormat="image/png"
-        width={640}
-        height={480}
+        style = {{width: "100%", height: "60%", position: "absolute", left: "50%", marginLeft: "-50%", objectFit: "cover", objectPosition: "center"}}
       />
-      <button onClick={handleCapture}>Capture</button>
-      {image && <img src={image} alt="Preview" />}
-      {image && <button onClick={handleUpload}>Upload</button>}
+      
+      {!image && <button className='button' onClick={handleCapture}>Capture</button>}
+      {image && <button className='retake' onClick={retake}>Retake</button>}
+      {image && <img src={image} alt="Preview" style = {{width: "100%", height: "60%", position: "absolute", left: "50%", marginLeft: "-50%", objectFit: "cover", objectPosition: "center"}}/>}
+      {image && <button className='upload' onClick={handleUpload}>Upload</button>}
     </div>
   );
 };
 
 export default CameraUpload;
+

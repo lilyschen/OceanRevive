@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { GoogleMap, MarkerF } from '@react-google-maps/api';
-import './MapScreen.css'; // Import the CSS file
+
 
 const MapScreen = ({ setScreen }) => {
   const [userLocation, setUserLocation] = useState(null);
