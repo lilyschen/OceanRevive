@@ -12,6 +12,18 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 // TODO: Configure CORS appropriately to only allowlist the client.
 app.use(cors())
 
+
+let capturedLocations = [
+  { location: {id: 1, name: 'Wreck Beach', lat: 49.2622, lng: -123.2615},
+    image: "",
+    garbageType: ["Sharp"]
+  },
+
+  { location: {id: 1, name: 'Spanish Banks', lat: 49.2765, lng: -123.2133},
+    image: "",
+    garbageType: ["Glass"]
+  }];
+
 // Set up multer for handling file uploads
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -25,14 +37,8 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 app.get('/locations', (req, res) => {
-  // Hardcoded list of locations with coordinates
-  const locations = [
-    { id: 1, name: 'Location A', lat: 49.261199779342405, lng: -123.24890381012028 },
-    { id: 2, name: 'Location B', lat: 37.7831, lng: -122.4039 },
-    // Add more locations as needed
-  ];
   
-  res.json(locations);
+  res.json(capturedLocations.map((item) => item.location));
 });
 
 app.post('/upload', upload.single('image'), (req, res) => {
