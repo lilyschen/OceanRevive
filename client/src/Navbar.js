@@ -67,8 +67,8 @@ const Navbar = () => {
             <br/>Camera Upload</Link>
           </li>
           <li>
-            <Link to="/profile" name='profile'>{activeIcon === 'profile' ? <ProfileLogoActive /> : <ProfileLogo />}
-            <br/><label for='profile'>Profile</label></Link>
+            <Link to="/profile">{activeIcon === 'profile' ? <ProfileLogoActive /> : <ProfileLogo />}
+            <br/>Profile</Link>
           </li>
           {/* Add more navigation links as needed */}
         </ul>
