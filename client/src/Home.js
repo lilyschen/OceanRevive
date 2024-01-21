@@ -4,7 +4,7 @@ import './Home.css';
 const Home = () => {
     return (
         <div className="container">
-            <h1>Ocean Revive</h1>
+            <img src={require('./Home icon/Main Page.jpeg')} className="TS" />
         </div>
     );
 };

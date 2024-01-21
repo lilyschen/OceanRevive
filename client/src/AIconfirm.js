@@ -7,7 +7,7 @@ const AIconfirm = () => {
     return (
         <div>
         <div className="AIconfirm">
-            <img src={require('./UI icon/Scroll_group.png')} className="AISample" />
+            <img src={require('./Home icon/AI id precaution.jpeg')} className="AISample" />
             
         </div>
         <div>
