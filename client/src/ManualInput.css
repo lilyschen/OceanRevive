@@ -6,14 +6,29 @@
 .responsive-image {
     max-width: 100%;
     max-height: 100%;
+    
 }
 
+.ManualSample{
+    /* display: flex; */
+    position: absolute;
+   width: 95%;
+   height: 90%;
 
+    /* justify-content: center;
+    align-items: center;
+    height: 100vh; */
+}
+
+.ManualConfirm {
+    display: flex;
+    justify-content: center;
+}
 .ManualSubmit {
     margin: 0 ;
     position: absolute;
-    top: 65%;
-    left: 42%;
+    top: 82%;
+    left: 38%;
 
     display: inline-block;
     padding: 10px 20px;
