@@ -23,7 +23,7 @@ let capturedLocations = [
   },
 
   {
-    location: { id: 1, name: 'Spanish Banks', lat: 49.2765, lng: -123.2133 },
+    location: { id: 2, name: 'Spanish Banks', lat: 49.2765, lng: -123.2133 },
     image: "",
     garbageType: ["Glass"]
   }];

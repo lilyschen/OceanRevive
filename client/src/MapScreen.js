@@ -45,23 +45,17 @@ const MapScreen = ({ setScreen }) => {
   const center = userLocation || { lat: 37.7749, lng: -122.4194 };
 
   return (
-    <div>
-      <h2>Map</h2>
-      <LoadScript googleMapsApiKey="AIzaSyAw3iHXjpJ1hyRjE3ebpQf7lxb2KYTnqZY">
-        <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={12}>
-          {locations.map((location) => (
-            <MarkerF
-              key={location.id}
-              position={{ lat: location.lat, lng: location.lng }}
-              title={location.name}
-              onClick={() => routeChange(location.id)}
-            >
-            </MarkerF>
-          ))}
-        </GoogleMap>
-      </LoadScript>
-      <button onClick={() => setScreen('camera')}>Go to Camera Upload</button>
-    </div>
+    <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={12}>
+      {locations.map((location) => (
+        <MarkerF
+          key={location.id}
+          position={{ lat: location.lat, lng: location.lng }}
+          title={location.name}
+          onClick={() => routeChange(location.id)}
+        >
+        </MarkerF>
+      ))}
+    </GoogleMap>
   );
 };
 

@@ -2,7 +2,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 
-const PinDetails = ({ match }) => {
+const PinDetails = () => {
     const { pinId } = useParams();
 
     return (
