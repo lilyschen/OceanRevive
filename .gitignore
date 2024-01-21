@@ -1,3 +1,4 @@
 node_modules
 *.png
 !*[!0-9]*.png
+package-lock.json
