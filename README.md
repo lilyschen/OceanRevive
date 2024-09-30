@@ -1,16 +1,22 @@
 # OceanRevive
 
+_by Joanne Chang, Lily Chen, and Rhoda Lam_
+
+Built during nwHacks, a 24-hour hackathon: https://devpost.com/software/ocean-revive
+
 # How to Run
 
 You need two terminals to run this
 
 To run the server
+
 ```
 cd server
 node app.js
 ```
 
 To run the client
+
 ```
 cd client
 npm start
